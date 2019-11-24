@@ -19,6 +19,14 @@ Server & Client are written in JavaScript. Server come with express & websocket.
 |Input |ahk/     |
 |Client|public/  |
 
+Contribute are welcome!!🤩🤩
+
+## Road map
+- [x] Basic 8 key controller
+- [ ] Update to 32 key
+- [ ] Web Cam air detection
+- [ ] Swipe mode
+
 ### Credit
 Ming Choi - Creator
 WebSocket.ahk: https://github.com/G33kDude/WebSocket.ahk
