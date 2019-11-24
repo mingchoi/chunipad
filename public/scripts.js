@@ -3,6 +3,7 @@
 */
 const SERVER_IP = "192.168.0.7";
 const SERVER_PORT = "3000";
+const SWIPE_MODE = true;
 
 
 
@@ -38,10 +39,20 @@ const touch$ = rxjs.merge(
 
 
 /*
-    Functions for sending key event to server
+    Functions
 */
 
+// Sending key event to server
 const sendKey = (n) => (keyDown) => ws.send("Controller.Key" + (keyDown ? "Down-" : "Up-") + n);
+
+const sendAir = (keyDown) => ws.send("Controller.Key" + (keyDown ? "Down-" : "Up-") + "Air");
+
+const detectTouchToAir = (t) => (SWIPE_MODE && t.screenY < screen.height / 2);
+
+const detectTouchToKey = (n) => (t) => {
+    if (detectTouchToAir(t)) return false;
+    return (t.screenX > keyWidth * n) && (t.screenX < keyWidth * (n + 1));
+};
 
 
 
@@ -49,19 +60,29 @@ const sendKey = (n) => (keyDown) => ws.send("Controller.Key" + (keyDown ? "Down-
     Map touch events to Keys & send to server
 */
 [...Array(keyTotal).keys()].forEach(n => {
+    const detectTouchToKeyOfN = detectTouchToKey(n);
     const sendKeyOfN = sendKey(n);
 
     touchBS$.pipe(
         rxjs.operators.filter(t => t !== undefined),
         rxjs.operators.map(touches => {
             return Array.from(touches)
-                .filter(t =>
-                    (t.screenX > keyWidth * n) && (t.screenX < keyWidth * (n + 1))
-                ).length > 0;
+                .filter(detectTouchToKeyOfN)
+                .length > 0;
         }),
         rxjs.operators.distinctUntilChanged()
     ).subscribe(sendKeyOfN);
 });
+
+touchBS$.pipe(
+    rxjs.operators.filter(t => t !== undefined),
+    rxjs.operators.map(touches => {
+        return Array.from(touches)
+            .filter(detectTouchToAir)
+            .length > 0;
+    }),
+    rxjs.operators.distinctUntilChanged()
+).subscribe(sendAir);
 
 
 

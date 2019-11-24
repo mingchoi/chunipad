@@ -25,7 +25,7 @@ Contribute are welcome!!🤩🤩
 - [x] Basic 8 key controller
 - [ ] Update to 32 key
 - [ ] Web Cam air detection
-- [ ] Swipe mode
+- [x] Swipe mode
 
 ### Credit
 - Ming Choi - Creator

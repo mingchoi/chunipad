@@ -16,6 +16,14 @@ class Example extends WebSocket
 	
 	OnMessage(Event)
 	{
+		if(Event.data ="KeyDown-Air")
+		{
+			Send {space down}
+		}
+		if(Event.data ="KeyUp-Air")
+		{
+			Send {space up}
+		}
 		if(Event.data ="KeyDown-0")
 		{
 			Send {s down}
