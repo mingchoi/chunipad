@@ -28,5 +28,5 @@ Contribute are welcome!!🤩🤩
 - [ ] Swipe mode
 
 ### Credit
-Ming Choi - Creator
-WebSocket.ahk: https://github.com/G33kDude/WebSocket.ahk
+- Ming Choi - Creator
+- WebSocket.ahk - from: https://github.com/G33kDude/WebSocket.ahk
