@@ -62,7 +62,7 @@ handTrack.load(DETECTION_PARAMS).then(_model => {
 */
 
 // Sending key event to server
-const sendAir = (handUp) => ws.send("Controller.Key" + (!handUp ? "Down-" : "Up-") + "Air");
+const sendAir = (handUp) => ws.send("Controller.Key" + (handUp ? "Down-" : "Up-") + "Air");
 
 /*
     Map touch events to Keys & send to server
