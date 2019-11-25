@@ -29,7 +29,6 @@ wss.on('connection', ws => {
             type = "Controller"
         } else if (msg.indexOf("Controller.Key") != -1) {
             const cmd = msg.replace("Controller.", "");
-            console.log(cmd);
             sendKey(cmd);
         } else {
             console.log(`Unknown command: ${msg}`);
