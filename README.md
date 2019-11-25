@@ -24,7 +24,7 @@ Contribute are welcome!!🤩🤩
 ## Road map
 - [x] Basic 8 key controller
 - [ ] Update to 32 key
-- [ ] Web Cam air detection
+- [x] Web Cam air detection
 - [x] Swipe mode
 
 ### Credit
