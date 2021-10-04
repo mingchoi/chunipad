@@ -1,7 +1,7 @@
 /*
     Constants
 */
-const SERVER_IP = "192.168.0.7";
+const SERVER_IP = "192.168.0.10";
 const SERVER_PORT = "3000";
 const SWIPE_MODE = true;
 

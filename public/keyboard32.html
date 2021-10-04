@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>chunipad</title>
+    <meta name="description" content="chunipad" />
+    <meta name="author" content="Ming Choi" />
+
+    <style>
+      body,
+      html {
+        position: fixed;
+      }
+
+      * {
+        user-select: none;
+        touch-action: none;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      #button-container {
+        display: flex;
+        width: 100vw;
+        pointer-events: none;
+      }
+
+      #button-container > button {
+        flex: 1;
+        height: 50vh;
+        -webkit-appearance: none;
+        pointer-events: none;
+      }
+
+      .hover {
+        background-color: pink;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="button-container">
+      <button id="btn31"></button>
+      <button id="btn29"></button>
+      <button id="btn27"></button>
+      <button id="btn25"></button>
+      <button id="btn23"></button>
+      <button id="btn21"></button>
+      <button id="btn19"></button>
+      <button id="btn17"></button>
+      <button id="btn15"></button>
+      <button id="btn13"></button>
+      <button id="btn11"></button>
+      <button id="btn9"></button>
+      <button id="btn7"></button>
+      <button id="btn5"></button>
+      <button id="btn3"></button>
+      <button id="btn1"></button>
+    </div>
+    <div id="button-container">
+      <button id="btn32"></button>
+      <button id="btn30"></button>
+      <button id="btn28"></button>
+      <button id="btn26"></button>
+      <button id="btn24"></button>
+      <button id="btn22"></button>
+      <button id="btn20"></button>
+      <button id="btn18"></button>
+      <button id="btn16"></button>
+      <button id="btn14"></button>
+      <button id="btn12"></button>
+      <button id="btn10"></button>
+      <button id="btn8"></button>
+      <button id="btn6"></button>
+      <button id="btn4"></button>
+      <button id="btn2"></button>
+    </div>
+    <script src="rxjs.umd.min.js"></script>
+    <script src="scripts32.js"></script>
+  </body>
+</html>
