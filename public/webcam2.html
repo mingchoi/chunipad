@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>chunipad</title>
+    <meta name="description" content="chunipad" />
+    <meta name="author" content="Ming Choi" />
+
+    <style>
+      * {
+        user-select: none;
+      }
+
+      html {
+        touch-action: none;
+      }
+
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <video autoplay="true" id="videoElement" style="display: none"></video>
+    <canvas id="canvasEl" width="640" height="480"></canvas>
+    <button id="btn">Reset idle color</button>
+    <button id="btnStart">Start</button>
+    <div id="stat"></div>
+
+    <script src="rxjs.umd.min.js"></script>
+    <script src="webcam2.js"></script>
+  </body>
+</html>

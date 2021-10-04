@@ -3,6 +3,8 @@ const SocketServer = require('ws').Server
 
 const SERVER_PORT = 3000
 
+const DEBUG = false
+
 const server = express()
     .use(express.static("public"))
     .listen(SERVER_PORT, () => console.log(`Listening on ${SERVER_PORT}`))
@@ -20,7 +22,9 @@ wss.on('connection', ws => {
     let type = "Unknown";
 
     ws.on('message', msg => {
-        console.log(`Received message: ${msg}`)
+        if (DEBUG) {
+            console.log(`Received message: ${msg}`)
+        }
         if (msg == "KeyServer.Register") {
             keyServer = ws;
             type = "KeyServer"
