@@ -1,5 +1,6 @@
 ﻿#NoEnv
 SetBatchLines, -1
+SetKeyDelay, -1
 
 #Include WebSocket.ahk
 

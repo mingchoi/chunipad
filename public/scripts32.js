@@ -130,6 +130,6 @@ document.addEventListener("contextmenu", (event) => event.preventDefault());
 /*
     Setup UI
 */
-[...Array(keyTotal).keys()]
-  .map((n) => n + 1)
-  .forEach((n) => (document.getElementById(`btn${n}`).innerHTML = n));
+// [...Array(keyTotal).keys()]
+//   .map((n) => n + 1)
+//   .forEach((n) => (document.getElementById(`btn${n}`).innerHTML = n));
