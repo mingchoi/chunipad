@@ -1,7 +1,7 @@
 /*
     Constants
 */
-const SERVER_IP = "192.168.0.10";
+const SERVER_IP = "127.0.0.1";
 const SERVER_PORT = "3000";
 
 /*
@@ -15,7 +15,7 @@ const btnStart = document.querySelector("#btnStart");
 /*
     Setup Web Socket
 */
-const ws = new WebSocket(`ws://${SERVER_IP}:${SERVER_PORT}`);
+const ws = new WebSocket(`ws://${SERVER_IP}:${SERVER_PORT}/ws`);
 
 ws.onopen = () => {
   console.log("Connected to server");
@@ -76,7 +76,7 @@ const getDistance = (a, b) => {
 };
 
 const sendAir = (n) => (handUp) =>
-  ws.send("Controller.Key32" + (handUp ? "down-" : "up-") + "air" + n);
+  ws.send("air-" + (handUp ? "down-" : "up-") + (6 - n));
 
 /*
 	Main Loop
